@@ -1,0 +1,136 @@
+@import "assets/variables.scss";
+
+/* Global */
+body {
+  font-size: 20px;
+  color: #989999;
+  background: #151515;
+  padding: 50px 0;
+}
+
+/* Style Classes */
+.gradient {
+  background: #129a67; /* Old browsers */
+  background: -moz-linear-gradient(top, #129a67 0%, #1fc48f 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #129a67 0%,#1fc48f 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #129a67 0%,#1fc48f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#129a67', endColorstr='#1fc48f',GradientType=0 ); /* IE6-9 */
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.header {
+  width: 100%;
+  padding: 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Elements */
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 21.73px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+button {
+  background: transparent;
+  outline: none;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 2em 1em;
+  text-align: center;
+
+  &.contato {
+    width: 100%;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+/* Components */
+.graph {
+  font-size: 20.32px;
+
+  .header {
+    font-size: 21.73px;
+  }
+}
+
+.box {
+  background: $color-grey;
+  border-radius: $border-radius;
+
+  .title {
+    font-size: 21.73px;
+  }
+
+  .number {
+    font-size: 28.96px;
+  }
+}
+
+.modal {
+  color: #333333;
+  background: #fff;
+
+  .header {
+    font-size: 18px;
+    text-align: left;
+    color: #fff;
+    padding: 40px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .content {
+    padding: 40px;
+  }
+
+  a {
+    color: #15b57a;
+    text-decoration: underline;
+  }
+
+  button {
+    background: #15b57a;
+  }
+}
+
+form {
+  font-size: 13px;
+
+  label {
+    font-weight: bold;
+  }
+
+  input,
+  textarea,
+  button {
+    color: #777777;
+    border-radius: 16px;
+    padding: 1em;
+
+  }
+} 

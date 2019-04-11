@@ -1,0 +1,32 @@
+#healthStatus {
+	h1 {
+		color: #fff;
+
+		span {
+			font-size: 0.5em;
+		}
+	}
+}
+
+#mainNavigation {
+	display: none;
+}
+
+#date-range {
+	border: none;
+	border-radius: 16px;
+	padding: 0.5em 1em;
+	background: #333;
+	color: #ddd;
+	position: relative;
+	display: block;
+
+	&::after {
+		width: 14px;
+		height: 14px;
+		content: "  ";
+		display: block;
+		position: relative;
+		background: url('../../assets/images/i-calendar.png');
+	}
+}
