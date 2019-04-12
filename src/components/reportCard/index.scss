@@ -9,6 +9,12 @@
 	padding: 20px 10px;
 	margin: 0 10px 0 10px;
 	width: calc(33.33% - 20px);
+	transition: transform 0.3s ease-in-out;
+
+	&:hover {
+		cursor: pointer;
+		transform: translateY(-5px);
+	}
 
 	h2 {
 		color: #fff;
@@ -78,6 +84,10 @@
 
 	&.dec {
 		background-color: $color-red;
+
+		&:before {
+			background-image: url('/assets/i-down.svg');
+		}
 	}
 }
 

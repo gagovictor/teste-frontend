@@ -11,7 +11,6 @@ import healthStatus from './layouts/healthStatus';
 import campaign from './layouts/campaign';
 import notification from './layouts/notification';
 import transaction from './layouts/transaction';
-import contactModal from './layouts/contactModal';
 
 const routes = [
   {
@@ -33,10 +32,6 @@ const routes = [
   {
     path: "/transaction",
     component: transaction
-  },
-  {
-    path: "/contact",
-    component: contactModal
   }
 ];
 
@@ -58,25 +53,6 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <div id="mainNavigation" className="container">
-          <ul>
-            <li>
-              <Link to="/healthstatus">Health Status</Link>
-            </li>
-            <li>
-              <Link to="/campaign">Campaign</Link>
-            </li>
-            <li>
-              <Link to="/notification">Notification</Link>
-            </li>
-            <li>
-              <Link to="/transaction">Transaction</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contato</Link>
-            </li>
-          </ul>
-        </div>
         <div id="main">
           {routes.map((route, i) => (
             <RouteWithSubRoutes key={i} {...route} />

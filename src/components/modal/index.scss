@@ -1,0 +1,57 @@
+@import "../../assets/variables.scss";
+
+.modal {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  position: fixed;
+  display: block;
+  background: rgba(0, 0, 0, 0.6);
+  transition: opacity 0.25s ease-in-out;
+
+  .modal-main {
+    top:50%;
+    left:50%;
+    width: 80%;
+    height: auto;
+    position:fixed;
+    background: white;
+    transform: translate(-50% ,-150%);
+    transition: transform 0.5s ease-in-out;
+
+    .header {
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 45px 35px;
+
+      @include gradientBg();
+
+      button {
+        margin: none;
+      }
+    }
+
+    .content {
+      padding: 45px 35px;
+    }
+  }
+
+  &.display-block {
+    opacity: 1;
+    pointer-events: all;
+
+    .modal-main {
+      transform: translate(-50% ,-50%);
+    }
+  }
+
+  &.display-none {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+}

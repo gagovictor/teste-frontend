@@ -1,0 +1,43 @@
+@import "../../assets/variables.scss";
+
+form {
+  font-size: 13px;
+  color: $color-grey-dark;
+
+  label {
+    font-weight: bold;
+    display: block;
+    position: relative;
+    margin-bottom: 1em;
+  }
+
+  input,
+  textarea,
+  button {
+    width: 100%;
+    outline: none;
+    border-radius: 16px;
+    padding: 0.75em 1em;
+    border: 1px solid $color-grey-light;
+
+    &[type="submit"] {
+      font-size: 18px;
+    }
+  }
+
+  .input-group {
+    width: 100%;
+    display: block;
+    position: relative;
+    margin-bottom: 1.5em;
+
+    &.half {
+      width: 50%;
+    }
+  }
+
+  span {
+    color: $color-green;
+  }
+} 
+

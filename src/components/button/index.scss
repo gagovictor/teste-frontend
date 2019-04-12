@@ -1,0 +1,44 @@
+@import "../../assets/variables.scss";
+
+input[type="submit"],
+.button {
+	color: #fff;
+	font-size: 1em;
+	padding: 0.35em 1.5em 0.5em 1.5em;
+	border: 2px solid #fff;
+	border-radius: 150px;
+	text-align: center;
+	position: relative;
+	display: block;
+	margin: auto;
+	background: transparent;
+
+	&.scale {
+		transition: letter-spacing 0.45s ease-out, transform 0.225s ease-out;
+
+		&:hover {
+			transform: scale(1.05);
+			letter-spacing: 0.1em;
+		}
+
+		&:active {
+			transform: scale(0.975);
+			letter-spacing: initial;
+		}
+	}
+
+	.fullwidth {
+		width: 100%;
+	}
+
+	&.gradient {
+		font-weight: 500;
+		border-width: 0;
+		@include gradientBg();
+
+		&:hover,
+		&:active {
+			@include displaceBg();
+		}
+	}
+}
