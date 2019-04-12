@@ -35,7 +35,7 @@ class Button extends Component {
 }
 
 Button.propTypes = {
-  header: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired
 }
 
 export default Button;

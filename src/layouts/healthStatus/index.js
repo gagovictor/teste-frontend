@@ -34,10 +34,6 @@ class healthStatus extends Component {
         this.setState({ displayModal: true });
     };
 
-    hideModal = () => {
-        this.setState({ displayModal: false });
-    };
-
  	render() {
         const contactButton = {
                 href : '/campaign',
@@ -61,9 +57,9 @@ class healthStatus extends Component {
                 	<ReportCard header={this.reports.transaction}/>
                 </section>
                 <section className="row space">
-                    <Button data={contactButton}/>
+                    <Button data={contactButton} onClick={this.displayModal}/>
                 </section>
-                <Modal title="Entre em contato" show={this.state.displayModal} handleClose={this.hideModal}>
+                <Modal title="Entre em contato" show={this.state.displayModal}>
                     <ContactForm />
                 </Modal>
         	</div>

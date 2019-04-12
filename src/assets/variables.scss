@@ -48,3 +48,9 @@ $gradient-end: #1fc48f;
 	    100%{background-position:0% 50%}
 	}
 }
+
+@mixin displaceBgSlow() {
+	-webkit-animation: animateBg 12s ease infinite;
+	-moz-animation: animateBg 12s ease infinite;
+	animation: animateBg 12s ease infinite;
+}

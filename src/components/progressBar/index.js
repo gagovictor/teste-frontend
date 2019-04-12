@@ -49,8 +49,6 @@ class progressBar extends Component {
             }
         });
 
-
-
         var amount = parseFloat(data.healthstatus) / 100.0;
         circle.animate(amount);
     }
