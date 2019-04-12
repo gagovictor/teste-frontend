@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './index.scss';
 
-class contactModal extends Component {
+class ContactModal extends Component {
   render() {
     return (
-      <div id="contact">
+      <div className="modal contact">
       </div>
     );
   }
 }
 
-export default contactModal;
+export default ContactModal;

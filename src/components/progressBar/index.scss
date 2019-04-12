@@ -1,0 +1,32 @@
+.progressbar {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+
+	div {
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    z-index: 9999;
+	    position: absolute;
+	    background: transparent;
+	}
+
+	.progressbar-text {
+		color: #fff !important;
+		font-weight: bold;
+		font-size: 40px;
+		text-align: center;
+		vertical-align: middle;
+		position: relative;
+		margin: auto;
+		height: auto;
+	}
+
+	svg {
+	    width: 100%;
+	    height: 100%;
+	}
+}
+

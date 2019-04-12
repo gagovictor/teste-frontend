@@ -77,11 +77,11 @@ function App() {
             </li>
           </ul>
         </div>
-        <main>
+        <div id="main">
           {routes.map((route, i) => (
             <RouteWithSubRoutes key={i} {...route} />
           ))}
-        </main>
+        </div>
       </div>
     </Router>
   );
