@@ -51,7 +51,7 @@ class healthStatus extends Component {
                 <section className="row space">
                 	<LineGraph />
                 </section>
-                <section className="row space">
+                <section className="grid space reportcards">
                 	<ReportCard header={this.reports.notification}/>
                 	<ReportCard header={this.reports.campaign}/>
                 	<ReportCard header={this.reports.transaction}/>

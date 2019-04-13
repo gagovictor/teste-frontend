@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 // Styles
-import 'bootstrap/dist/css/bootstrap.css';
+//import 'bootstrap/dist/css/bootstrap.css';
 import './assets/fonts/fonts.scss';
 import './App.scss';
 
@@ -52,8 +52,8 @@ function RouteWithSubRoutes(route) {
 function App() {
   return (
     <Router>
-      <div className="container">
-        <div id="main">
+      <div id="main">
+        <div className="container">
           {routes.map((route, i) => (
             <RouteWithSubRoutes key={i} {...route} />
           ))}

@@ -26,12 +26,6 @@ class contactForm extends Component {
 	    this.state = {
 	    	sentForm : false,
 	    	files: [
-	        {
-	          source: "index.html",
-	          options: {
-	            type: "local"
-	          }
-	        }
 	      ]
 	    };
 	}

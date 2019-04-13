@@ -3,6 +3,8 @@ import './index.scss';
 import ProgressBar from '../progressBar';
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
+import iUp from './assets/i-up.svg';
+import iDown from './assets/i-down.svg';
 
 class reportCard extends Component {
 	constructor(props) {

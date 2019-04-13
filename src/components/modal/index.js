@@ -61,8 +61,10 @@ class modal extends Component {
 				<div className="modal-main">
 					{this.state.showHeader &&
 						<section className="header">
-							<h2>{this.props.title}</h2>
-							<button onClick={this.handleClose ? this.handleClose : this.closeModal}>x</button>
+							<div className="container">
+								<h2>{this.props.title}</h2>
+								<button onClick={this.handleClose ? this.handleClose : this.closeModal}>x</button>
+							</div>
 						</section>
 					}
 					<section className="content">
