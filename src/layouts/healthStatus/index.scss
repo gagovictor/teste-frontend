@@ -1,9 +1,16 @@
+@import "../../assets/variables.scss";
+
 #healthStatus {
 	h1 {
 		color: #fff;
 
 		span {
+			color: $color-grey-light;
 			font-size: 0.5em;
+
+			@media screen and(max-width: 768px) {
+				display: none;
+			}
 		}
 	}
 }

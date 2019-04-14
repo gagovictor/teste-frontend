@@ -22,7 +22,7 @@ class datePicker extends Component {
     		<div className="datepicker flatpickr" ref={this.datePicker}>
         		<div className="input-container">
                     <input className="date-range" type="date" data-input/>
-                    <label for="date-range" data-toggle>
+                    <label htmlFor="date-range" data-toggle>
                     </label>
                 </div>
         	</div>

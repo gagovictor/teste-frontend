@@ -24,10 +24,10 @@ class modal extends Component {
 		document.getElementById(this.htmlId).addEventListener("keydown", this.escFunction, false);
 		if(document.querySelector("#"+this.htmlId + " > .modal-main .content button.close-modal"))
 		{	// Revisar
-			for(var i = 0; i < document.querySelectorAll("#"+this.htmlId + " > .modal-main .content button.close-modal").length; i ++)
-				console.log(this.htmlId + " " +i);
+//			for(var i = 0; i < document.querySelectorAll("#"+this.htmlId + " > .modal-main .content button.close-modal").length; i ++)
+//				console.log(this.htmlId + " " +i);
 			document.querySelector("#"+this.htmlId + " > .modal-main .content button.close-modal").addEventListener("click", this.closeModal, false);
-		} else console.log("Found none for "+this.htmlId);
+		} //else console.log("Found none for "+this.htmlId);
 	}
 
 	componentWillUnmount() {
@@ -41,7 +41,7 @@ class modal extends Component {
 	}
 
     closeModal = (event) => {
-    	console.log("Called for "+this.htmlId + ", "+event.target.id);
+    	//console.log("Called for "+this.htmlId + ", "+event.target.id);
         this.setState({ show: false });
     };
 

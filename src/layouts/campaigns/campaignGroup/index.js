@@ -13,7 +13,6 @@ class campaignGroup extends Component {
 		this.state = {
 			expanded: false
 		};
-    	this.groupId = 'campaign-group-'+idGenerator();
 		this.group = React.createRef();
 		this.list = React.createRef();
     	this.handleClick = this.handleClick.bind(this);
@@ -23,13 +22,16 @@ class campaignGroup extends Component {
         const data = this.props.data;
         var campaigns = null;
         if(data.campaign) {
-	        campaigns = data.campaign.map((c) =>
-				<Campaign data={c} key={idGenerator().toString()} />
+	        campaigns = data.campaign.map(
+	        	function(c, i) {
+	        		var k = parseInt(i + '' + (Math.random()*1000));
+					return(<Campaign data={c} key={'key-campaign-'+k} />);
+	        	}
 			);
         }
 
 		return [
-    		<tr className="campaigns-group" data-campaign-group={this.groupId} onClick={this.handleClick} ref={this.group}>
+    		<tr className="campaigns-group" onClick={this.handleClick} ref={this.group} key={idGenerator()}>
 				<td className="kind">
 					{data.kind} 
 				</td>
@@ -54,19 +56,21 @@ class campaignGroup extends Component {
 					{data.period}
 				</td>
 			</tr>,
-			<tr className="campaigns-list" data-campaign-list={this.groupId} ref={this.list}>
-				<td colspan="6">
+			<tr className="campaigns-list" ref={this.list} key={idGenerator()}>
+				<td colSpan="6">
 				{(data.campaign.length > 0) && (
 					<table className="campaign-report">
 						<thead>
-							<th>Campanha</th>
-							<th>Objetivo</th>
-							<th>Impressões</th>
-							<th>Cliques</th>
-							<th>CTR</th>
-							<th>CPM (R$)</th>
-							<th>CPC (R$)</th>
-							<th>Custo (R$)</th>
+							<tr>
+								<th>Campanha</th>
+								<th>Objetivo</th>
+								<th>Impressões</th>
+								<th>Cliques</th>
+								<th>CTR</th>
+								<th>CPM (R$)</th>
+								<th>CPC (R$)</th>
+								<th>Custo (R$)</th>
+							</tr>
 						</thead>
 						<tbody>
 							{campaigns}
@@ -75,7 +79,7 @@ class campaignGroup extends Component {
 				)}
 				</td>
 			</tr>,
-			<tr className="spacer"></tr>
+			<tr className="spacer" key={idGenerator()}></tr>
    		];
  	}
 

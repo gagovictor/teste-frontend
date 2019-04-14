@@ -12,7 +12,7 @@ class healthStatus extends Component {
 
 	constructor(props) {
 		super(props);
-		this.reports = {
+        this.reports = {
 			campaigns : {
 				title : 'Campaigns',
                 path : '/campaigns',

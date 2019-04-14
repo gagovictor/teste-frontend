@@ -9,30 +9,40 @@ import './App.scss';
 // Layouts
 import healthStatus from './layouts/healthStatus';
 import campaigns from './layouts/campaigns';
-import notification from './layouts/notification';
-import transaction from './layouts/transaction';
 import Footer from './layouts/footer';
 
 const routes = [
   {
-    path: "/",
-    component: healthStatus
-  },
-  {
-    path: "/healthstatus",
-    component: healthStatus
+    path: ["/", "/healthstatus"],
+    component: healthStatus,
+    data : {
+      title : 'Health Status',
+      api_url : 'http://pmweb.agencia.pmweb.com.br/teste-frontend/api/intranet/healthstatus.json'
+    },
   },
   {
     path: "/campaigns",
-    component: campaigns
+    component: campaigns,
+    data : {
+      title : 'Campaigns',
+      api_url : 'http://pmweb.agencia.pmweb.com.br/teste-frontend/api/intranet/campaigns.json'
+    },
   },
   {
     path: "/notification",
-    component: notification
+    component: campaigns,
+    data : {
+      title : 'Notification',
+      api_url : 'http://pmweb.agencia.pmweb.com.br/teste-frontend/api/intranet/notification.json'
+    },
   },
   {
     path: "/transaction",
-    component: transaction
+    component: campaigns,
+    data : {
+      title : 'Transaction',
+      api_url : 'http://pmweb.agencia.pmweb.com.br/teste-frontend/api/intranet/transaction.json'
+    },
   }
 ];
 
@@ -44,7 +54,7 @@ function RouteWithSubRoutes(route) {
       path={route.path}
       render={props => (
         // pass the sub-routes down to keep nesting
-        <route.component {...props} routes={route.routes} />
+        <route.component {...props} route_data={route.data} />
       )}
     />
   );

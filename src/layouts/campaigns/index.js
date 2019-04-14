@@ -10,8 +10,7 @@ class campaigns extends Component {
 
 	constructor(props) {
 		super(props);
-		this.api_url = 'http://pmweb.agencia.pmweb.com.br/teste-frontend/api/intranet/campaigns.json';
-        this.state = {
+		this.state = {
             isLoading : true,
             data: [],
             error: null
@@ -22,9 +21,12 @@ class campaigns extends Component {
         const { isLoading, data, error } = this.state;
         var campaignGroups = null;
         if(data.campaigns) {
-	        campaignGroups = data.campaigns.map((c) =>
-				<CampaignGroup data={c} key={idGenerator().toString()} />
-			);
+	        campaignGroups = data.campaigns.map(
+	        	function(c, i) {
+	        		var k = parseInt(i + '' + (Math.random()*1000));
+					return(<CampaignGroup data={c} key={'key-campaign-group-'+k} />);
+	        	}
+	        );
         }
 
 		return (
@@ -33,7 +35,7 @@ class campaigns extends Component {
 				{!isLoading ? (
 					<div className="container">
 						<section className="header">
-							<h1>Campaigns</h1>
+							<h1>{this.props.route_data.title}</h1>
 						</section>
 						<section className="table-wrapper">
 							<table className="table campaigns space sortable" cellSpacing="0" cellPadding="0">
@@ -69,7 +71,7 @@ class campaigns extends Component {
     // Resgata dados da API
     fetchData() {
         const campaigns = this;
-        fetch(campaigns.api_url).
+        fetch(campaigns.props.route_data.api_url).
         then(function(response) {
             var contentType = response.headers.get("content-type");
             if(contentType && contentType.indexOf("application/json") !== -1) {
