@@ -1,7 +1,56 @@
-.flatpickr-calendar {
+@import "../../assets/variables.scss";
+
+.input-container {
+  border: none;
+  border-radius: 16px;
+  padding: 0.5em 1em;
+  background: #333;
   color: #ddd;
-  -webkit-box-shadow: 1px 0 0 #1f3f34, -1px 0 0 #1f3f34, 0 1px 0 #1f3f34, 0 -1px 0 #1f3f34, 0 3px 13px rgba(0,0,0,0.08);
-          box-shadow: 1px 0 0 #1f3f34, -1px 0 0 #1f3f34, 0 1px 0 #1f3f34, 0 -1px 0 #1f3f34, 0 3px 13px rgba(0,0,0,0.08);
+  position: relative;
+  display: block;
+
+  input {
+    @media screen and(max-width: 768px) {
+      display: none;
+
+      &.hidden {
+        width: 0;
+        right: 0;
+        display: block;
+        position: absolute;
+      }
+    }
+  }
+
+  label {
+    width: 1em;
+    height: 1em;
+    top: 0.125em;
+    content: ' ';
+    position: relative;
+    display: inline-block;
+    background-size: contain;
+    background-position: center;
+    background-image: url("./assets/i-calendar.png");
+  }
+
+  .date-range {
+    background: none;
+    border: none;
+    color: #ddd;
+    top: -0.15em;
+    position: relative;
+    vertical-align: middle;
+  }
+}
+
+.flatpickr-calendar {
+  margin-left: -1.2em;
+  margin-top: 0.5em;
+  color: #ddd;
+  -webkit-box-shadow: 0px 17px 26px -19px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 17px 26px -19px rgba(0,0,0,0.75);
+  box-shadow: 0px 17px 26px -19px rgba(0,0,0,0.75);
 }
 
 .flatpickr-months,
@@ -9,10 +58,22 @@
 .flatpickr-days {
   color: #ddd;
   background: #222;
+  padding: 5px 0;
+}
+
+.flatpickr-current-month,
+.flatpickr-current-month input.cur-year {
+  color: #16c786;
+  font-weight: bold;
+}
+
+.flatpickr-weekdays {
+  font-weight: bold;
 }
 
 span.flatpickr-weekday {
   color: #ddd;
+  font-weight: bold;
 }
 
 .flatpickr-calendar.multiMonth .flatpickr-days .dayContainer:nth-child(n+2) .flatpickr-day.inRange:nth-child(7n+1) {
@@ -113,6 +174,7 @@ span.flatpickr-weekday {
 
 .flatpickr-day {
   color: #ddd;
+  margin-top: 3px;
 }
 
 .flatpickr-day.inRange,
@@ -242,4 +304,10 @@ span.flatpickr-weekday {
 .flatpickr-time .flatpickr-time-separator,
 .flatpickr-time .flatpickr-am-pm {
   color: #ddd;
+}
+
+.flatpickr-calendar.arrowTop:after,
+.flatpickr-calendar.arrowTop:before {
+  content: '';
+  display: none;
 }

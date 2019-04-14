@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ProgressBar from 'progressbar.js';
 import './index.scss';
 
-class progressBar extends Component {
+class progressBarCircle extends Component {
 
 	constructor(props) {
 		super(props);
@@ -14,7 +14,7 @@ class progressBar extends Component {
  	render() {
         const data = this.props.data;
 		return (
-    		<div className="progressbar">
+    		<div className="progressbar circle">
                 <p></p>
                 <div className="progress" id={"progress-"+this.id}></div>
         	</div>
@@ -54,8 +54,8 @@ class progressBar extends Component {
     }
 }
 
-progressBar.propTypes = {
+progressBarCircle.propTypes = {
   data: PropTypes.object.isRequired
 }
 
-export default progressBar;
+export default progressBarCircle;

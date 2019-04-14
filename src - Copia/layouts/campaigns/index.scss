@@ -1,0 +1,146 @@
+@import "../../assets/variables.scss";
+
+table {
+	width: 100%;
+	border-collapse: separate; 
+	
+	&.campaigns {
+		thead {
+			position: relative;
+		}
+
+		th {
+			width: auto;
+			padding-bottom: 1em;
+			text-align: left;
+			vertical-align: middle;
+
+			&:nth-child(2) {
+				text-align: center;
+			}
+		}
+
+		tbody {
+			tr {
+				background: $color-grey;
+				margin-bottom: 10px;
+				position: relative;
+				transform: scale(0.95);
+				transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+				&:hover {
+					transform: scale(0.96);
+					-webkit-box-shadow: 0px 11px 11px -8px rgba(0, 0, 0, 0.75);
+					-moz-box-shadow: 0px 11px 11px -8px rgba(0, 0, 0, 0.75);
+					box-shadow: 0px 11px 11px -8px rgba(0, 0, 0, 0.75);
+/*
+					&::before {
+						transform: translateX(0);
+
+					}
+*/
+					td {
+						&:first-of-type {
+							transition: all 0.3s ease-in-out;
+							padding-left: 8px;
+							border-left: 8px solid $color-green;
+						}
+					}
+				}
+				
+				&.spacer {
+					height: 10px;
+					background: none;
+				}
+/*
+				&::before {
+					content: ' ';
+					display: block;
+					transform: translateX(8px);
+					position: absolute;
+					top: 0;
+					left: -8px;
+					bottom: 0;
+					height: 100%;
+					border-radius: 8px;
+					background: $color-green;
+					width: 8px;
+					transition: transform 0.3s ease-in-out;
+				}
+*/
+				&:first-child {
+					border-top-left-radius: 10px;
+					border-top-right-radius: 10px;
+				}
+				
+				&:last-child {
+					border-bottom-left-radius: 10px;
+					border-bottom-right-radius: 10px;
+				}
+
+				td {
+					width: 1fr;
+					padding: 0 10px;
+					transition: box-shadow 0.3s ease-in-out;
+
+					&:first-child {
+						border-top-left-radius: 10px;
+						border-bottom-left-radius: 10px;
+					}
+					
+					&:last-child {
+						border-top-right-radius: 10px;
+						border-bottom-right-radius: 10px;
+					}
+
+					&.fullwidth {
+						width: 100%;
+						clear: both;
+						display: block;
+						float: left;
+						position: relative;
+					}
+
+					&.channels {
+						display: block;
+
+						ul {
+							width: 100%;
+							padding: 0;
+							display: flex;
+							align-items: center;
+							justify-content: space-between;
+
+							.channel {
+								width: 45%;
+								padding-top: 50%;
+								position: relative;
+								display: block;
+								opacity: 0.5;
+								background-size: contain;
+								background-repeat: no-repeat;
+								background-position: center;
+
+								&.fb {
+									background-image: url("./assets/i-fb.svg");
+								}
+
+								&.google {
+									background-image: url("./assets/i-google.svg");
+								}
+
+								&.inactive {
+									opacity: 1;
+								}
+							}
+						}
+					}
+
+					&.healthstatus {
+						padding-right: 50px;
+					}
+				}
+			}
+		}
+	}
+}
