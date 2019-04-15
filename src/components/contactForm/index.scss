@@ -6,6 +6,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .date-picker {
+    background: none;
+    color: $color-grey-dark;
+    border-radius: 16px;
+    border: 1px solid $color-grey-light;
+
+    .input-container {
+      border: none;
+      background: none;
+      padding: 0.75em 1em;
+
+      input {
+        font-size: 1em;
+        color: $color-grey-dark;
+      }
+    }
+
+    label {
+      display: inline-block;
+    }
+  }
 }
 
 section {
@@ -44,36 +66,36 @@ section {
   }
 }
 
-form {
+#contact-form {
   font-size: 13px;
   color: $color-grey-dark;
-
-  label {
-    font-weight: bold;
-    display: block;
-    position: relative;
-    margin-bottom: 1em;
-  }
-
-  input,
-  textarea,
-  button {
-    width: calc(100% - 2em);
-    outline: none;
-    border-radius: 16px;
-    padding: 0.75em 1em;
-    border: 1px solid $color-grey-light;
-
-    &[type="submit"] {
-      font-size: 18px;
-    }
-  }
 
   .input-group {
     width: 100%;
     display: block;
     position: relative;
     margin-bottom: 1.5em;
+
+    > label {
+      font-weight: bold;
+      display: block;
+      position: relative;
+      margin-bottom: 1em;
+    }
+
+    > input,
+    > textarea,
+    > button {
+      width: calc(100% - 2em);
+      outline: none;
+      border-radius: 16px;
+      padding: 0.75em 1em;
+      border: 1px solid $color-grey-light;
+
+      &[type="submit"] {
+        font-size: 18px;
+      }
+    }
 
     &.half {
       width: 50%;
@@ -96,6 +118,12 @@ form {
 
   span {
     color: $color-green;
+  }
+
+  .row {
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 } 
 

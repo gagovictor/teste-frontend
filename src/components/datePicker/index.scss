@@ -1,46 +1,48 @@
 @import "../../assets/variables.scss";
 
-.input-container {
-  border: none;
-  border-radius: 16px;
-  padding: 0.5em 1em;
-  background: #333;
-  color: #ddd;
-  position: relative;
-  display: block;
+.date-picker {
+  .input-container {
+    border: none;
+    border-radius: 16px;
+    padding: 0.5em 1em;
+    background: #333;
+    color: #ddd;
+    position: relative;
+    display: block;
 
-  input {
-    @media screen and(max-width: 768px) {
-      display: none;
+    input {
+      @media screen and(max-width: 768px) {
+        display: none;
 
-      &.hidden {
-        width: 0;
-        right: 0;
-        display: block;
-        position: absolute;
+        &.hidden {
+          width: 0;
+          right: 0;
+          display: block;
+          position: absolute;
+        }
       }
     }
-  }
 
-  label {
-    width: 1em;
-    height: 1em;
-    top: 0.125em;
-    content: ' ';
-    position: relative;
-    display: inline-block;
-    background-size: contain;
-    background-position: center;
-    background-image: url("./assets/i-calendar.png");
-  }
+    label {
+      width: 1em;
+      height: 1em;
+      top: 0.125em;
+      content: ' ';
+      position: relative;
+      display: inline-block;
+      background-size: contain;
+      background-position: center;
+      background-image: url("./assets/i-calendar.png");
+    }
 
-  .date-range {
-    background: none;
-    border: none;
-    color: #ddd;
-    top: -0.15em;
-    position: relative;
-    vertical-align: middle;
+    input {
+      background: none;
+      border: none;
+      color: #ddd;
+      top: -0.15em;
+      position: relative;
+      vertical-align: middle;
+    }
   }
 }
 

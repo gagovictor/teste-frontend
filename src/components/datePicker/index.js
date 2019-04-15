@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import flatpickr from "flatpickr";
 //import { Portuguese } from "./lang/pt.js"
 import 'flatpickr/dist/flatpickr.css';
@@ -11,19 +12,22 @@ class datePicker extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            selectedDates: new Array([new Date('08/24/2016'), new Date('08/24/2016')])
+      selectedDates: null
 		};
+    this.mode = this.props.mode ? this.props.mode : 'single';
+    this.showIcon = this.props.showIcon ? this.props.showIcon : true;
     this.datePicker = React.createRef();
-		//this.handleClick = this.handleClick.bind(this);
 	}
 
  	render() {
 		return (
-    		<div className="datepicker flatpickr" ref={this.datePicker}>
+    		<div className={"date-picker flatpickr" + (this.props.addClass && (" " + this.props.addClass))} ref={this.datePicker}>
         		<div className="input-container">
-                    <input className="date-range" type="date" data-input/>
-                    <label htmlFor="date-range" data-toggle>
-                    </label>
+                    <input className={"date-"+this.mode} type="date" data-input/>
+                    {this.showIcon == false && (
+                      <label data-toggle>
+                      </label>
+                    )}
                 </div>
         	</div>
    		);
@@ -31,15 +35,19 @@ class datePicker extends Component {
 
     componentDidMount() {
         const dP = this.datePicker;
+        const mode = this.mode;
         flatpickr(this.datePicker.current, {
-            onChange: this.onChange.bind(this),
-            mode: "range",
+            mode: mode,
             wrap: true,
             dateFormat: "Y-m-d",
             position: 'below',
-            defaultDate: ["2016-08-24", "2016-09-22"],
+            defaultDate: (mode == "range" ? ["2016-08-24", "2016-09-22"] : null),
+            onChange: this.onChange.bind(this),
             onOpen: function() {
-              console.log('onopen', dP.current.childNodes[0].childNodes[0].classList.add('hidden'));
+              dP.current.childNodes[0].childNodes[0].classList.add('hidden');
+            },
+            onClose: function() {
+              dP.current.childNodes[0].childNodes[0].classList.remove('hidden');
             },
             locale: {
               rangeSeparator: ' - ',
@@ -92,6 +100,12 @@ class datePicker extends Component {
     onChange(selectedDates, dateStr, instance) {
         this.setState({selectedDates : selectedDates});
     }
+}
+
+datePicker.propTypes = {
+  mode: PropTypes.string,
+  addClass: PropTypes.string,
+  showIcon: PropTypes.bool
 }
 
 export default datePicker;

@@ -51,10 +51,10 @@ class healthStatus extends Component {
     		<div id="healthStatus">
         		<section className="header">
         			<h1><span>Pmweb ></span> Health Status</h1>
-                    <DatePicker />
+                    <DatePicker mode="range" />
                 </section>
                 <section className="row space">
-                	<LineGraph />
+                	<LineGraph mode="range" />
                 </section>
                 <section className="grid space reportcards">
                 	<ReportCard header={this.reports.notification}/>

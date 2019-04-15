@@ -24,8 +24,8 @@ class campaignGroup extends Component {
         if(data.campaign) {
 	        campaigns = data.campaign.map(
 	        	function(c, i) {
-	        		var k = parseInt(i + '' + (Math.random()*1000));
-					return(<Campaign data={c} key={'key-campaign-'+k} />);
+	        		var k = parseInt(Math.random() * 1000);
+					return(<Campaign data={c} key={'key-campaign-' + k} />);
 	        	}
 			);
         }

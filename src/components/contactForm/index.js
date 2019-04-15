@@ -14,6 +14,7 @@ import './index.scss';
 import successGraph from './assets/success.png';
 import Modal from '../../components/modal';
 import Button from '../../components/button';
+import DatePicker from '../../components/datePicker';
 
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
@@ -39,7 +40,7 @@ class contactForm extends Component {
 	    return (
 	        <div className="contact-form">
 	        	<section className="form">
-			      	<form action="">
+			      	<form id="contact-form" action="">
 			      		<div className="row">
 				      		<div className="input-group half">
 					     		<label htmlFor="name">Nome *</label>
@@ -59,7 +60,7 @@ class contactForm extends Component {
 			      		<div className="row">
 				      		<div className="input-group half">
 					      		<label htmlFor="birthdate">Data de nascimento *</label>
-					      		<input name="birthdate" type="date" />
+					      		<DatePicker mode="single" addClass="date-birth" showIcon={false} />
 				      		</div>
 				      	</div>
 			      		<div className="row">
