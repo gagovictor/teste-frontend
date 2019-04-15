@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './index.scss';
 import CampaignGroup from './campaignGroup';
 import idGenerator from 'react-id-generator';
@@ -30,30 +31,37 @@ class campaigns extends Component {
         }
 
 		return (
-			<div id="campaigns">
+			<div id="campaigns" className="modal display-block">
 				{error && <p>{error.message}</p>}
 				{!isLoading ? (
-					<div className="container">
+					<div className="modal-main">
 						<section className="header">
-							<h1>{this.props.route_data.title}</h1>
+							<div className="container">
+								<h1>{this.props.route_data.title}</h1>
+								<button className="close"><Link to={'/healthstatus'}>x</Link></button>
+							</div>
 						</section>
-						<section className="table-wrapper">
-							<table className="table campaigns space sortable" cellSpacing="0" cellPadding="0">
-								<thead>
-									<tr>
-										<th className="kind">Target</th>
-										<th className="channels">Canais</th>
-										<th className="campaigns">Campanhas</th>
-										<th className="healthstatus">Health Status</th>
-										<th className="created">Criado em</th>
-										<th className="period">Periodicidade</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr className="spacer"></tr>
-  									{campaignGroups}
-								</tbody>
-							</table>
+						<section className="content">
+							<div className="container">
+								<div className="table-wrapper">
+									<table className="table campaigns space sortable" cellSpacing="0" cellPadding="0">
+										<thead>
+											<tr>
+												<th className="kind">Target</th>
+												<th className="channels">Canais</th>
+												<th className="campaigns">Campanhas</th>
+												<th className="healthstatus">Health Status</th>
+												<th className="created">Criado em</th>
+												<th className="period">Periodicidade</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr className="spacer"></tr>
+		  									{campaignGroups}
+										</tbody>
+									</table>
+								</div>
+							</div>
 						</section>
 					</div>
 				) : (

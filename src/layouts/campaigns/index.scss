@@ -1,4 +1,9 @@
 @import "../../assets/variables.scss";
+@import "../../components/modal/index.scss";
+
+.modal {
+	background: $color-grey-dark;
+}
 
 .table-wrapper {
 	overflow: auto;
@@ -206,4 +211,29 @@ table {
 			}
 		}
 	}
+}
+
+/* Modal styles */
+.modal#campaigns {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  z-index: 1000;
+  position: fixed;
+  overflow: auto;
+  display: block;
+  background: $color-grey-dark;
+
+  .modal-main {
+    width: 100%;
+    top: 50px;
+    position: relative;
+  }
+
+  &.display-block {
+    .modal-main {
+      transform: translateX(-50%);
+  	}
+  }
 }

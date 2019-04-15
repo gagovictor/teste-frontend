@@ -9,6 +9,7 @@ import './App.scss';
 // Layouts
 import healthStatus from './layouts/healthStatus';
 import campaigns from './layouts/campaigns';
+import modal from './components/modal';
 import Footer from './layouts/footer';
 
 const routes = [
@@ -19,6 +20,32 @@ const routes = [
       title : 'Health Status',
       api_url : 'http://pmweb.agencia.pmweb.com.br/teste-frontend/api/intranet/healthstatus.json'
     },
+    routes : [
+      {
+        path: "/campaigns",
+        component: campaigns,
+        data : {
+          title : 'Campaigns',
+          api_url : 'http://pmweb.agencia.pmweb.com.br/teste-frontend/api/intranet/campaigns.json'
+        },
+      },
+      {
+        path: "/notification",
+        component: campaigns,
+        data : {
+          title : 'Notification',
+          api_url : 'http://pmweb.agencia.pmweb.com.br/teste-frontend/api/intranet/notification.json'
+        },
+      },
+      {
+        path: "/transaction",
+        component: campaigns,
+        data : {
+          title : 'Transaction',
+          api_url : 'http://pmweb.agencia.pmweb.com.br/teste-frontend/api/intranet/transaction.json'
+        },
+      }
+    ]
   },
   {
     path: "/campaigns",

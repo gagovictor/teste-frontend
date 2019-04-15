@@ -64,7 +64,7 @@ class healthStatus extends Component {
                 <section className="row space">
                     <Button data={contactButton} onClick={this.displayModal}/>
                 </section>
-                <Modal title="Entre em contato" show={this.state.displayModal}>
+                <Modal title="Entre em contato" show={this.state.displayModal} addClass="contact">
                     <ContactForm />
                 </Modal>
         	</div>

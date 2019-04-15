@@ -4,7 +4,6 @@ import ProgressBarLine from "../../../components/progressBar/progressBarLine.js"
 import PropTypes from 'prop-types';
 import idGenerator from 'react-id-generator';
 import Campaign from '../campaign';
-import './index.scss';
 
 class campaignGroup extends Component {
 
@@ -19,6 +18,7 @@ class campaignGroup extends Component {
 	}
 
  	render() {
+ 		var expanded = this.state.expanded;
         const data = this.props.data;
         var campaigns = null;
         if(data.campaign) {
@@ -31,7 +31,7 @@ class campaignGroup extends Component {
         }
 
 		return [
-    		<tr className="campaigns-group" onClick={this.handleClick} ref={this.group} key={idGenerator()}>
+    		<tr className={"campaigns-group "+(expanded && "expanded")} onClick={this.handleClick} ref={this.group} key={idGenerator()}>
 				<td className="kind">
 					{data.kind} 
 				</td>
@@ -56,7 +56,7 @@ class campaignGroup extends Component {
 					{data.period}
 				</td>
 			</tr>,
-			<tr className="campaigns-list" ref={this.list} key={idGenerator()}>
+			<tr className={"campaigns-list "+(expanded && "expanded")} ref={this.list} key={idGenerator()}>
 				<td colSpan="6">
 				{(data.campaign.length > 0) && (
 					<table className="campaign-report">
@@ -85,17 +85,7 @@ class campaignGroup extends Component {
 
     handleClick() {
     	// Expande / minimiza lista de campanhas dentro do grupo
-        if(!this.state.expanded) {
-        	this.setState({ expanded : true });
-        	this.group.current.classList.add('expanded');
-        	this.list.current.classList.add('expanded');
-        }
-        else
-        {
-        	this.setState({ expanded : false });
-        	this.group.current.classList.remove('expanded');
-        	this.list.current.classList.remove('expanded');
-        }
+        this.setState({ expanded : this.state.expanded ? false : true });
     }
 }
 

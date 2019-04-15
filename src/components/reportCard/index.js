@@ -38,9 +38,11 @@ class reportCard extends Component {
                             <div className="column">
                                 <h4 className="title">Inbound</h4>
                                 <span className="count">{data.inbound}</span>
-                                <span className={"difference " + ((data.difference.indexOf('-') > -1) ? 'dec' : 'inc')}>
-                                    {data.difference}
-                                </span>
+                                {data.difference && (
+                                    <span className={"difference " + ((data.difference.indexOf('-') > -1) ? 'dec' : 'inc')}>
+                                        {data.difference}
+                                    </span>
+                                )}
                                 <hr/>
                                 <h4 className="title">Outbound</h4>
                                 <span className="count">{data.outbound}</span>

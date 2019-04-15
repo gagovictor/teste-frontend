@@ -127,3 +127,40 @@ button {
     color: $color-green;
   }
 }
+
+/* Modal styles */
+.modal.contact {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  position: fixed;
+  display: block;
+  background: rgba(0, 0, 0, 0.6);
+  transition: opacity 0.25s ease-in-out;
+
+  .modal-main {
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: auto;
+    position: fixed;
+    background: #fff;
+    transform: translate(-50% ,-150%);
+    transition: transform 0.5s ease-in-out, width 0.5s ease-in-out;
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 45px 0;
+
+      @include gradientBg();
+
+      button {
+        margin: none;
+      }
+    }
+  }
+}

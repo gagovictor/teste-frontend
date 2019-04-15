@@ -9,7 +9,7 @@ class modal extends Component {
 		super(props);
 		this.state = {
 			show : this.props.show,
-			showHeader : this.props.showHeader != undefined ? this.props.showHeader : true
+			showHeader : this.props.showHeader !== undefined ? this.props.showHeader : true
 		};
 		this.htmlId = "modal-" + idGenerator();
 		this.escFunction = this.escFunction.bind(this);
@@ -19,7 +19,7 @@ class modal extends Component {
 	componentDidMount() {
 		this.setState({
 			show : this.props.show,
-			showHeader : this.props.showHeader != undefined ? this.props.showHeader : true
+			showHeader : this.props.showHeader !== undefined ? this.props.showHeader : true
 		});
 		document.getElementById(this.htmlId).addEventListener("keydown", this.escFunction, false);
 		if(document.querySelector("#"+this.htmlId + " > .modal-main .content button.close-modal"))
