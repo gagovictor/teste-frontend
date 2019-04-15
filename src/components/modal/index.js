@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './index.scss';
 import idGenerator from 'react-id-generator';
+import Button from '../button';
 
 class modal extends Component {
 
@@ -63,7 +64,8 @@ class modal extends Component {
 						<section className="header">
 							<div className="container">
 								<h2>{this.props.title}</h2>
-								<button onClick={this.handleClose ? this.handleClose : this.closeModal}>x</button>
+								<button className="btn-close" onClick={this.handleClose ? this.handleClose : this.closeModal}>
+								</button>
 							</div>
 						</section>
 					}

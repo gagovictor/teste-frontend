@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
 import PropTypes from 'prop-types';
 import './index.scss';
+import iClose from './assets/i-close.svg';
 
 class Button extends Component {
 

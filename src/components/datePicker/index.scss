@@ -11,14 +11,16 @@
     display: block;
 
     input {
-      @media screen and(max-width: 768px) {
-        display: none;
+      &.hideable {
+        @media screen and(max-width: 768px) {
+          display: none;
 
-        &.hidden {
-          width: 0;
-          right: 0;
-          display: block;
-          position: absolute;
+          &.hidden {
+            width: 0;
+            right: 0;
+            display: block;
+            position: absolute;
+          }
         }
       }
     }

@@ -21,10 +21,10 @@ class datePicker extends Component {
 
  	render() {
 		return (
-    		<div className={"date-picker flatpickr" + (this.props.addClass && (" " + this.props.addClass))} ref={this.datePicker}>
+    		<div className={"date-picker flatpickr " + (this.props.addClass && (this.props.addClass))} ref={this.datePicker}>
         		<div className="input-container">
-                    <input className={"date-"+this.mode} type="date" data-input/>
-                    {this.showIcon == false && (
+                    <input className={"date-"+this.mode+" "+(this.props.hideInputMobile && "hideable")} type="date" data-input/>
+                    {this.showIcon === true && (
                       <label data-toggle>
                       </label>
                     )}
@@ -36,18 +36,21 @@ class datePicker extends Component {
     componentDidMount() {
         const dP = this.datePicker;
         const mode = this.mode;
+        const props = this.props;
         flatpickr(this.datePicker.current, {
             mode: mode,
             wrap: true,
             dateFormat: "Y-m-d",
             position: 'below',
-            defaultDate: (mode == "range" ? ["2016-08-24", "2016-09-22"] : null),
+            defaultDate: (mode == "range" ? ["2016-08-24", "2016-09-22"] : "2016-08-24"),
             onChange: this.onChange.bind(this),
             onOpen: function() {
-              dP.current.childNodes[0].childNodes[0].classList.add('hidden');
+              if(props.hideInputMobile)
+                dP.current.childNodes[0].childNodes[0].classList.add('hidden');
             },
             onClose: function() {
-              dP.current.childNodes[0].childNodes[0].classList.remove('hidden');
+              if(props.hideInputMobile)
+                dP.current.childNodes[0].childNodes[0].classList.remove('hidden');
             },
             locale: {
               rangeSeparator: ' - ',
@@ -105,7 +108,8 @@ class datePicker extends Component {
 datePicker.propTypes = {
   mode: PropTypes.string,
   addClass: PropTypes.string,
-  showIcon: PropTypes.bool
+  showIcon: PropTypes.bool,
+  hideInputMobile: PropTypes.bool
 }
 
 export default datePicker;

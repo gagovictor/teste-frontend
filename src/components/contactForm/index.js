@@ -60,7 +60,7 @@ class contactForm extends Component {
 			      		<div className="row">
 				      		<div className="input-group half">
 					      		<label htmlFor="birthdate">Data de nascimento *</label>
-					      		<DatePicker mode="single" addClass="date-birth" showIcon={false} />
+					      		<DatePicker mode="single" addClass="date-birth" showIcon={false} hideInputMobile={false} />
 				      		</div>
 				      	</div>
 			      		<div className="row">

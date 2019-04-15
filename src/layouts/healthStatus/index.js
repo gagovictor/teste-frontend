@@ -51,7 +51,7 @@ class healthStatus extends Component {
     		<div id="healthStatus">
         		<section className="header">
         			<h1><span>Pmweb ></span> Health Status</h1>
-                    <DatePicker mode="range" />
+                    <DatePicker mode="range" hideInputMobile={true} showIcon={true} />
                 </section>
                 <section className="row space">
                 	<LineGraph mode="range" />

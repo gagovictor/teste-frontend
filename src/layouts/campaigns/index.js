@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './index.scss';
+import Button from '../../components/button';
 import CampaignGroup from './campaignGroup';
 import idGenerator from 'react-id-generator';
 import sorttable from 'sorttable';
@@ -38,7 +39,7 @@ class campaigns extends Component {
 						<section className="header">
 							<div className="container">
 								<h1>{this.props.route_data.title}</h1>
-								<button className="close"><Link to={'/healthstatus'}>x</Link></button>
+								<button className="btn-close"><Link to={'/healthstatus'}></Link></button>
 							</div>
 						</section>
 						<section className="content">
